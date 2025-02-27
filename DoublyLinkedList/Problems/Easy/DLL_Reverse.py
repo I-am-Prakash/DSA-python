@@ -37,8 +37,7 @@ class DoublyLinkedList:
     #                             #
     #                             #
     ###############################
-    def reverse(self):
-        # using 3 variables -> before temp and after -> reversing the Links 
+    def reverse(self): 
         current_node = self.head
         
         
