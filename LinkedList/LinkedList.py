@@ -9,7 +9,7 @@ class LinkedList:
         self.head = new_node
         self.tail = new_node
         self.length = 1
-
+    # for Printing nodes in the Linked List    
     def print_list(self):
         temp = self.head
         count = 1
@@ -20,21 +20,25 @@ class LinkedList:
             count+=1
         print(f"current length of Linked List : {self.length}")
 
+    # for adding new node at the end of Linked List
     def append(self, value):
+        #create new node
         new_node = Node(value)
-
+        #Cover Edge cases
+        #if the Linked List is Empty
         if self.head is None:
             self.head = new_node
             self.tail = new_node
         else:
+            # Linked List is having >1 node
             self.tail.next = new_node
             self.tail = self.tail.next
+        # Always ++/-- length when adding/removing node from Linked List => For tracking the length of the linked list.
         self.length+=1
         return True
     
     def pop(self): 
-        # 3 - Edge cases we need write code for
-        
+        #Cover Edge cases
         temp = self.head
         prev = self.head
         #1 : empty Linked List
@@ -46,6 +50,7 @@ class LinkedList:
             temp = temp.next
         self.tail = prev
         self.tail.next = None
+        # Always ++/-- length when adding/removing node from Linked List => For tracking the length of the linked list.
         self.length -=1
         #3 : only 1 item => still head and tail points to 1st node -> as while loop is not executed
         if(self.length == 0):
@@ -56,15 +61,16 @@ class LinkedList:
     def prepend(self, value):
         # create node 
         new_node = Node(value)
-
-        #if empty 
+        #Cover Edge cases
+        #1. if Linked List empty 
         if(self.length == 0):
             self.head = new_node
             self.tail = new_node
-        #1 or > elements
         else:
+            #2. > elements
             new_node.next = self.head
             self.head = new_node
+        # Always ++/-- length when adding/removing node from Linked List => For tracking the length of the linked list.
         self.length +=1
 
         return True
@@ -73,12 +79,12 @@ class LinkedList:
         #if empty list
         if(self.length == 0):
             return None
-        #if >1 element
         else:
+            # >=1 element
             temp = self.head
             self.head = self.head.next
             temp.next = None
-        
+        # Always ++/-- length when adding/removing node from Linked List => For tracking the length of the linked list.
         self.length-=1
         #if only 1 element
         if self.length == 0:
@@ -93,6 +99,7 @@ class LinkedList:
         if(index < 0 or index >= self.length):
             return None
         temp = self.head
+        # _ because we were not using value inside loop
         for _ in range(index):
             temp = temp.next
         return temp
@@ -118,7 +125,7 @@ class LinkedList:
 
         #use get method to get the node at particular index
         temp = self.get(index)
-        # check if temp is None 
+        # check if temp is None bcz of out of range index
         if temp:
             temp.value = value
             return True
@@ -152,7 +159,7 @@ class LinkedList:
         # cover all edge case
         # use already avail methods to solve this 
 
-        # check if index within range otherwise return None -> bcz this method returns node an object/null
+        # check if index within range otherwise return None -> bcz this method returns node so it will be node-object/null
         if(index < 0  or index >= self.length):
             return None
         
