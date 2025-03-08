@@ -23,23 +23,26 @@ class HashTable:
         for char in key:
             hash_index = (hash_index+ord(char))*23%(len(self.data_map))
         return hash_index
+    def print_table(self):
+        for i in self.data_map:
+            print(i)
     
     def set(self, key, value):
         hash_index = self.__hash(key)
         if self.data_map[hash_index] ==None:
             self.data_map[hash_index] = []
-            self.data_map[hash_index].append [key, value]
+            self.data_map[hash_index].append([key, value])
 
     def get(self, key, value):
         hash_index = self.__hash(key)
         if self.data_map[hash_index] ==None:
             self.data_map[hash_index] = []
-            self.data_map[hash_index].append [key, value]
+        self.data_map[hash_index].append([key, value])
 
 my_hash_table = HashTable()
 
 my_hash_table.set('bolts', 400)
 my_hash_table.set('washers ', 400)
-my_hash_table.set('bolts', 400)
+my_hash_table.set('Nuts', 400)
 
 my_hash_table.print_table()
