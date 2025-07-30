@@ -16,3 +16,5 @@ def twoSum(nums, target):
         if complement in num_map:
             return [num_map[complement], i]
         num_map[num] = i
+
+print(twoSum([2,7,11,15], 9))
