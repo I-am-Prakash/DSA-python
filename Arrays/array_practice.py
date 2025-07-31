@@ -3,7 +3,7 @@ from array import *
 # 1. Create an array and traverse. 
 
 my_array = array('i',[1,2,3,4,5])
-
+print("Step 1")
 for i in my_array:
     print(i)
 
@@ -38,7 +38,7 @@ print(my_array)
 
 # 7. Remove any array element using remove() method
 print("Step 7")
-my_array.remove(11)
+my_array.remove(11) # removes first encountered-11
 print(my_array)
 
 # 8. Remove last array element using pop() method
@@ -66,15 +66,15 @@ print(my_array.count(11))
 print(my_array)
 # 13. Convert array to string using tostring() method
 print("Step 13")
-strTemp = my_array.tostring()
-print(strTemp)
-ints = array('i')
-ints.fromstring(strTemp)
-print(ints)
+# strTemp = my_array.tostring()
+# print(strTemp)
+# ints = array('i')
+# ints.fromstring(strTemp)
+# print(ints)
 
 # 14. Convert array to a python list with same elements using tolist() method
 print("Step 14")
-# print(my_array.tolist())
+print(my_array.tolist())
 # 15. Append a string to char array using fromstring() method
 
 # 16. Slice Elements from an array
