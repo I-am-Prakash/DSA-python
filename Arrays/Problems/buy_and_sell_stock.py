@@ -26,5 +26,5 @@ def buyAndSellStock(arr):
 
 # print(buyAndSellStock([10,6,3,11,13]))
 print(buyAndSellStock([10,9,8,6,2]))
-# tc-> O(n^2)
+# tc-> O(n)
 # sc => o(1)
